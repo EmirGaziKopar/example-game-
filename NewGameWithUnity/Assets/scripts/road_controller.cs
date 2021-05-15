@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class road_controller : MonoBehaviour
 {
+
+    
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +21,17 @@ public class road_controller : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.tag == "yenile")
-        {
-            /*transform.position += new Vector3(transform.GetChild(0).GetComponent<Renderer>().bounds.size.x * 2, 0, 0); //Yolun mevcut konumunu bizim yolumuzun bittiði yere aldýk.*/
-            Debug.Log("yenile !!!");
-        }
 
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.position += new Vector3(transform.GetChild(0).GetComponent<Renderer>().bounds.size.x * 4,0,0);
+
+            
     }
+        
+        
+        
+
+    
 }

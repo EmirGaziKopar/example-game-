@@ -71,16 +71,19 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
      }
      */
 
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "MainCamera")
         {
             Debug.Log("he died!!!");
 
         }
+        else if (collision.tag == "yenile")
+        {
+            Debug.Log("yenile");
+        }
 
 
-
-    }
+    }*/
 }
 
