@@ -6,8 +6,8 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
 {
     public float hiz_katsayisi;
     public Rigidbody2D rb; //Astronotumun üzerinde bir rigitbody var evet fakat ben ona oyun içersinden kod içersinden nasýl müdehale edeceðim rigit body cinsinden bir referans sayesinde 
-
-    public static float speed;
+    
+    public static float speed=1f; //hýzý buradan ayarlayabilirsiniz.
     // Start is called before the first frame update
     void Start() //guncelleme methodlarýndan herhangi birisi çaðýrýlmadan önce start fonksiyonu çaðýrýlýr oyun baþladýðýnda sadece ve sadece bir kez çalýþacak fonksiyonlarýn yerleþtirildiði yer
     {
@@ -18,7 +18,7 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
     void Update()// Oyun baþlatýldýktan sonraki aþamalarda her bir oyun karesini oluþturulmasý için her seferinde bu update fonksiyonu çalýþtýrýlýr frame baþlarken çalýþtýrýlýr
     {
         rb = GetComponent<Rigidbody2D>();
-        speed = rb.velocity.magnitude;
+       /* speed = rb.velocity.magnitude; */ //anlýk olarak hýz almak için
     }
 
     private void FixedUpdate()
@@ -56,7 +56,7 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
 
         //Deðerler çok hýzlý bir þekilde deðiþtiði için ýþýnlanma olarak adlandýrýlan durumla karþýlaþýyoruz bunu düzenlemek için ise þunu yapmalýyýz. transform.position '+=' new Vector3(yatay, 0, 0);
 
-        transform.position += new Vector3(0, 1 * hiz_katsayisi, 0);
+        transform.position += new Vector3(0, speed * hiz_katsayisi, 0);
 
 
     }
@@ -73,19 +73,22 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
      }
      */
 
-    /*private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "MainCamera")
+       
+        
+
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+            
+        if(collision.tag == "MainCamera")
         {
-            Debug.Log("he died!!!");
-
+            Debug.Log("Oldun knaka sonunda ");
         }
-        else if (collision.tag == "yenile")
-        {
-            Debug.Log("yenile");
-        }
-
-
-    }*/
+        
+    }
 }
 

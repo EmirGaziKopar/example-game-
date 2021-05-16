@@ -26,7 +26,7 @@ public class road_controller : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         transform.position += new Vector3(transform.GetChild(0).GetComponent<Renderer>().bounds.size.x * 4,0,0);
-
+        Debug.Log("Yenileme Gerçekleþti");
             
     }
         
