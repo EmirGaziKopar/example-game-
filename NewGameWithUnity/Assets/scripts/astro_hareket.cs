@@ -5,8 +5,9 @@ using UnityEngine; //unity ile haberleþebilmek için gerekli olan fonksiyonlarýn 
 public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda sizin eklediðiniz her bir c# dosyasý arkada hazýr bir c# dosyasýndan türetülüp buraya konuluyor
 {
     public float hiz_katsayisi;
-    Rigidbody2D rb; //Astronotumun üzerinde bir rigitbody var evet fakat ben ona oyun içersinden kod içersinden nasýl müdehale edeceðim rigit body cinsinden bir referans sayesinde 
+    public Rigidbody2D rb; //Astronotumun üzerinde bir rigitbody var evet fakat ben ona oyun içersinden kod içersinden nasýl müdehale edeceðim rigit body cinsinden bir referans sayesinde 
 
+    public static float speed;
     // Start is called before the first frame update
     void Start() //guncelleme methodlarýndan herhangi birisi çaðýrýlmadan önce start fonksiyonu çaðýrýlýr oyun baþladýðýnda sadece ve sadece bir kez çalýþacak fonksiyonlarýn yerleþtirildiði yer
     {
@@ -16,12 +17,13 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
     // Update is called once per frame
     void Update()// Oyun baþlatýldýktan sonraki aþamalarda her bir oyun karesini oluþturulmasý için her seferinde bu update fonksiyonu çalýþtýrýlýr frame baþlarken çalýþtýrýlýr
     {
-
-
+        rb = GetComponent<Rigidbody2D>();
+        speed = rb.velocity.magnitude;
     }
 
     private void FixedUpdate()
     {
+        
         hiz_katsayisi = 0.3f;
         float yatay = Input.GetAxis("Horizontal"); //Yatay diye bir deðiþken oluþturduk buna da Input'dan gelen horizontali atadýk amaç ekranda sað sol tuþlarýna basarak bir karakteri harket ettirmek 
                                                    //Yatayda olan hareketlerimizi tanýmlamak için input managerden alan girdileri alacaðýmýz bir komut ýnput manager'de name kýsmýnda yazan Horizontal'ý kullandýk
