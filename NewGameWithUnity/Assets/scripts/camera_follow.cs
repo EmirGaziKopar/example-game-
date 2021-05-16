@@ -51,8 +51,8 @@ public class camera_follow : MonoBehaviour
         if (zaman <= 7 && zaman >= 6 && sayac != 1)
         {
             sayac++;
-            astro_hareket.speed *= 1.1f; //buradan kamera hýzý il birlikte astronot hýzýnýda artýrmýþ olduk 
-            hiz *= 1.1f;
+            astro_hareket.speed *= 1.150f; //buradan kamera hýzý il birlikte astronot hýzýnýda artýrmýþ olduk 
+            hiz *= 1.150f;
             camera_rigit.velocity = transform.right * hiz * Time.deltaTime;
             Debug.Log("Hizlan !!!");
         }
