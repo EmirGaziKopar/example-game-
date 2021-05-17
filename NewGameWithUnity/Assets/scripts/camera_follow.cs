@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class camera_follow : MonoBehaviour
 {
@@ -76,14 +77,22 @@ public class camera_follow : MonoBehaviour
             
     }
 
-   /* private void OnTriggerExit2D(Collider2D collision)
+    /* private void OnTriggerExit2D(Collider2D collision)
+     {
+         if (collision.tag == "yenile")
+         {
+             Debug.Log("oldun çýk!!!");
+         }
+
+     }  */ //Bu çalýþmadý 
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.tag == "yenile")
-        {
-            Debug.Log("oldun çýk!!!");
-        }
-       
-    }  */ //Bu çalýþmadý 
+        Debug.Log("Öldünüz");
+        SceneManager.LoadScene("GameOver");
+
+    }
 
 }
 
