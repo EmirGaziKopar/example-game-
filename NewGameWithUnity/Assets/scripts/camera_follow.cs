@@ -9,7 +9,7 @@ public class camera_follow : MonoBehaviour
     public float kuvvet_katsayisi = 0.1f;
     public float Speed_karsila = astro_hareket.speed;
     /*public float speed;*/
-    public static float hiz = 300f; //camera hýzýný buradan ayarlayýn
+    public static float hiz = 400f; //camera hýzýný buradan ayarlayýn
 
     public float zaman;
 
